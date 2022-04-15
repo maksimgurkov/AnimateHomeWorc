@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startAnimation: UIButton!
     
-    let animations = Animation()
+    private var animations = Animation.animationModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,9 @@ class ViewController: UIViewController {
         valueDelayLabel.text = String("delay: \(animations.delay)")
         valueDurationLabel.text = String("duration: \(animations.duration)")
         
+        animations = Animation.animationModel
+        
+        startAnimation.setTitle(animations.animation, for: .normal)
     }
     
     
